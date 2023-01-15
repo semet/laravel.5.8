@@ -14,43 +14,43 @@ class TestController extends Controller
         $this->data = [
             [
                 'collector' => 'Rudi',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Ibnu',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Soleh',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Rahmat',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Budi',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Fuji',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Ridwan',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Naufal',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Tuti',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
             [
                 'collector' => 'Naufal',
-                // 'Hasil' => 1000000
+                'Hasil' => 1000000
             ],
         ];
     }
