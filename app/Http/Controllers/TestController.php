@@ -55,6 +55,6 @@ class TestController extends Controller
                     ->map(fn($value, $key) => $value['Hasil'])
                     ->reduce(fn($carry, $item) => $carry + $item);
 
-        return number_format($jumlahTunggakan, 2);
+        return number_format($jumlahTunggakan);
     }
 }
