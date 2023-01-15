@@ -51,12 +51,8 @@ class TestController extends Controller
             ],
         ];
 
-        $jumlahTunggakan = collect($collection)->map((function($value, $key) {
-            return $value['Hasil'];
-        }))
-        ->reduce((function($carry, $item) {
-            return $carry + $item;
-        }));
+        $jumlahTunggakan = collect($collection)->map(fn($value, $key) => $value['Hasil'])
+        ->reduce(fn($carry, $item) => $carry + $item);
 
         return $jumlahTunggakan;
     }
