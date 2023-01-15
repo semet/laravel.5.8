@@ -13,4 +13,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'TestController@getJumlahTunggaka');
+Route::get('/', 'TestController@getJumlahTunggakan');
+Route::get('/test-2', 'TestController@bagiTunggakanBerdasarkanJumlahPeminjam');

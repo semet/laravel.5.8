@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class TestController extends Controller
 {
-    public function getJumlahTunggaka()
+    public array $data;
+
+    public function __construct()
     {
-        $collection = [
+        $this->data = [
             [
                 'collector' => 'Rudi',
                 'Hasil' => 1000000
@@ -50,11 +53,26 @@ class TestController extends Controller
                 'Hasil' => 1000000
             ],
         ];
+    }
 
-        $jumlahTunggakan = collect($collection)
+    public function getJumlahTunggakan()
+    {
+        $jumlahTunggakan = collect($this->data)
                     ->map(fn($value, $key) => $value['Hasil'])
-                    ->reduce(fn($carry, $item) => $carry + $item);
+                    // ->reduce(fn($carry, $item) => $carry + $item);
+                    ->sum();
 
         return number_format($jumlahTunggakan);
+    }
+
+    public function bagiTunggakanBerdasarkanJumlahPeminjam()
+    {
+
+        $tunggakanPerOrang = collect($this->data)
+                        ->map(fn($value, $key) => $value['Hasil'])
+                        ->tap(fn($collection) => $collection->sum() / $collection->count())
+                        ->map(fn($result) => number_format($result));
+
+        return ($tunggakanPerOrang);
     }
 }
